@@ -23,19 +23,10 @@
         "backgroundColor": "#ffffff"
       
       },
-      "package": "com.lugard_eplore-place",
-      "googleMapsApiKey": "AIzaSyDbdZMYOx6TgU1gPwbLlkB0x-nZd2CKyVo"
+      "package": "com.lugard_eplore-place"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      [
-        "expo-location",
-        {
-          "locationAlwaysAndWhenInUsePermission": "Allow Explore Place to use your location."
-        }
-      ]
-    ]
+    }
   }
 }
