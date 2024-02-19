@@ -20,13 +20,22 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff",
-        "package": "com.lugard.eplore-place",
-        "googleMapsApiKey": "AIzaSyDbdZMYOx6TgU1gPwbLlkB0x-nZd2CKyVo"
-      }
+        "backgroundColor": "#ffffff"
+      
+      },
+      "package": "com.lugard_eplore-place",
+      "googleMapsApiKey": "AIzaSyDbdZMYOx6TgU1gPwbLlkB0x-nZd2CKyVo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Explore Place to use your location."
+        }
+      ]
+    ]
   }
 }

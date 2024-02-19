@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "239146343911",
+    "project_id": "explore-place-app",
+    "storage_bucket": "explore-place-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239146343911:android:f1ec6a00248fda00f2b142",
+        "android_client_info": {
+          "package_name": "com.lugard_exploreplace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs1h5t7hbDDd3NUXf2FoJMW5eaqWaoYOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
