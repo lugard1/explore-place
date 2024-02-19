@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default function Home() {
   return (
     <SafeAreaView>
-      <View style={{padding: 20}}>
+      <View style={{padding:20}}>
         <Header />
       </View>
     </SafeAreaView>
