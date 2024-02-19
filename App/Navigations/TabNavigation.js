@@ -24,21 +24,21 @@ export default function TabNavigation() {
        options={{
         tabBarLabel: 'Search',
         tabBarIcon: ({ color, size }) => (
-          <Ionicons name="search" size={24} color="black" />
+          <Ionicons name="search" size={24} color={color} />
         )
       }} />
       <Tab.Screen name="Fav" component={Fav}
        options={{
         tabBarLabel: 'Fav',
         tabBarIcon: ({ color, size }) => (
-          <Ionicons name="heart-outline" size={24} color="black" />
+          <Ionicons name="heart-outline" size={24} color={color} />
         )
       }} />
       <Tab.Screen name="Profile" component={Profile}
        options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({ color, size }) => (
-          <FontAwesome name="user" size={24} color="black" />
+          <FontAwesome name="user" size={24} color={color} />
         )
       }} />
     </Tab.Navigator>
