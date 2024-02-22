@@ -1,5 +1,5 @@
 import { View, Text, Dimensions } from 'react-native';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import React from 'react';
 
 export default function GoogleMapView() {
