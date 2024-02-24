@@ -4,12 +4,18 @@ import { StyleSheet, Text, View } from 'react-native';
 import TabNavigation from './App/Navigations/TabNavigation';
 import React, { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
+import { useFonts } from 'expo-font';
 import { UserLocationContext } from './App/Context/UserLocationContext';
 
 
 export default function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
+  const [fontsLoaded, fontError] = useFonts({
+    'Raleway-Regular': require('./assets/Fonts/Raleway-Regular.ttf'),
+    'Raleway-Regular': require('./assets/Fonts/Raleway-SemiBold.ttf')
+  });
+
   useEffect(() => {
     (async () => {
       

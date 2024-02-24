@@ -22,7 +22,6 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff",
         "googleMapsApiKey": "{process.env.REACT_APP_API_KEY}"
-      
       },
       "package": "com.lugard_eplore-place"
     },
@@ -35,7 +34,8 @@
         {
           "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
         }
-      ]
+      ],
+      "expo-font"
     ]
   }
 }
