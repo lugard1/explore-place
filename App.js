@@ -13,7 +13,7 @@ export default function App() {
   const [errorMsg, setErrorMsg] = useState(null);
   const [fontsLoaded, fontError] = useFonts({
     'Raleway-Regular': require('./assets/Fonts/Raleway-Regular.ttf'),
-    'Raleway-Regular': require('./assets/Fonts/Raleway-SemiBold.ttf')
+    'raleway-bold': require('./assets/Fonts/Raleway-Bold.ttf')
   });
 
   useEffect(() => {

@@ -1,7 +1,9 @@
 import { View, Text, Dimensions } from 'react-native';
-import MapView, {PROVIDER_GOOGLE, mapRegion} from 'react-native-maps';
+import MapView, {Marker, PROVIDER_GOOGLE, mapRegion} from 'react-native-maps';
 import React, { useState, useContext, useEffect } from 'react';
 import { UserLocationContext } from '../../Context/UserLocationContext';
+// import * as Font from 'expo-font';
+
 
 export default function GoogleMapView() {
   // const handleMapError = (error) => {
@@ -25,22 +27,25 @@ export default function GoogleMapView() {
 
   return (
     <View style={{ marginTop: 20 }}>
-      <Text style={{fontSize: 20, marginBottom: 10, fontWeight: 600, fontFamily: 'Raleway-Bold'}}>
+      <Text style={{ fontSize: 20, marginBottom: 10, fontWeight: 600, fontFamily: 'Raleway-Bold' }}>
         Top Near By Places
       </Text>
       <View style={{borderRadius: 20, overflow: 'hidden'}}>
-      <MapView
-        style={{
-          width: Dimensions.get('screen').width * 0.89,
-          height: Dimensions.get('screen').height * 0.23,
+        <MapView
+          style={{
+            width: Dimensions.get('screen').width * 0.89,
+            height: Dimensions.get('screen').height * 0.23,
           
-        }}
-          provider={PROVIDER_GOOGLE}
-          showsUserLocation={true}
-          region={mapRegion}
-        >
-
-      </MapView>
+          }}
+            provider={PROVIDER_GOOGLE}
+            showsUserLocation={true}
+            region={mapRegion}
+          >
+          <Marker
+          title="You"
+          coordinate={mapRegion}
+          />
+        </MapView>
       </View>
      
     </View>

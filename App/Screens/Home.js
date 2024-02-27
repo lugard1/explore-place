@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../Components/Home/Header';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import GoogleMapView from '../Components/Home/GoogleMapView';
+import CategoryList from '../Components/Home/CategoryList';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <View style={{padding:20}}>
         <Header />
         <GoogleMapView />
+        <CategoryList />
       </View>
     </SafeAreaView>
   )
