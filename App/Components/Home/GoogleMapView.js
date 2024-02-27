@@ -6,48 +6,43 @@ import { UserLocationContext } from '../../Context/UserLocationContext';
 
 
 export default function GoogleMapView() {
-  // const handleMapError = (error) => {
-  //   console.error('MapView Error:', error);
-  // };
+  const { location } = useContext(UserLocationContext);
+  const [mapRegion, setMapRegion] = useState(null);
 
-  const [mapRegion, setMapRegion] = useState([])
-  const {location, setLocation} = useContext(UserLocationContext);
-  useEffect(()=>{
-    if(location)
-    {
+  useEffect(() => {
+    if (location) {
       setMapRegion({
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
         latitudeDelta: 0.0522,
         longitudeDelta: 0.0421
-      })
+      });
     }
-  },[])
-
+  }, [location]);
 
   return (
     <View style={{ marginTop: 20 }}>
-      <Text style={{ fontSize: 20, marginBottom: 10, fontWeight: 600, fontFamily: 'Raleway-Bold' }}>
+      <Text style={{ fontSize: 20, marginBottom: 10, fontWeight: '600', fontFamily: 'Raleway-Bold' }}>
         Top Near By Places
       </Text>
-      <View style={{borderRadius: 20, overflow: 'hidden'}}>
-        <MapView
-          style={{
-            width: Dimensions.get('screen').width * 0.89,
-            height: Dimensions.get('screen').height * 0.23,
-          
-          }}
+      <View style={{ borderRadius: 20, overflow: 'hidden' }}>
+        {mapRegion && (
+          <MapView
+            style={{
+              width: Dimensions.get('screen').width * 0.89,
+              height: Dimensions.get('screen').height * 0.23,
+            }}
             provider={PROVIDER_GOOGLE}
             showsUserLocation={true}
             region={mapRegion}
           >
-          <Marker
-          title="You"
-          coordinate={mapRegion}
-          />
-        </MapView>
+            <Marker
+              title="You"
+              coordinate={mapRegion} // Ensure coordinate is an object, not an array
+            />
+          </MapView>
+        )}
       </View>
-     
     </View>
-  )
+  );
 }
