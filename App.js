@@ -7,18 +7,16 @@ import * as Location from 'expo-location';
 import { useFonts } from 'expo-font';
 import { UserLocationContext } from './App/Context/UserLocationContext';
 
-
 export default function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
   const [fontsLoaded, fontError] = useFonts({
     'Raleway-Regular': require('./assets/Fonts/Raleway-Regular.ttf'),
-    'raleway-bold': require('./assets/Fonts/Raleway-Bold.ttf')
+    'Raleway-Bold': require('./assets/Fonts/Raleway-Bold.ttf')
   });
 
   useEffect(() => {
     (async () => {
-      
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
         setErrorMsg('Permission to access location was denied');
@@ -30,11 +28,16 @@ export default function App() {
     })();
   }, []);
 
+  if (!fontsLoaded) {
+    // Font loading is in progress, return a loading indicator or null
+    return null;
+  }
+
   return (
     <View style={styles.container}>
-      <UserLocationContext.Provider value={{location, setLocation}}>
+      <UserLocationContext.Provider value={{ location, setLocation }}>
         <NavigationContainer>
-          <TabNavigation/>
+          <TabNavigation />
         </NavigationContainer>
       </UserLocationContext.Provider>
     </View>

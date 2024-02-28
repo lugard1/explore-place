@@ -33,6 +33,7 @@ export default function CategoryList() {
       }}>Select Top Category</Text>
       <FlatList 
         data={categoryList} // Corrected here
+        horizontal={true}
         renderItem={({item}) => ( // Added parentheses to wrap the JSX
           <View>
             <CategoryItem category={item} />
