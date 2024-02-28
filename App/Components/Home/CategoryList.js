@@ -1,7 +1,8 @@
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { FlatList } from 'react-native';
 import CategoryItem from './CategoryItem';
+// import { TouchableOpacity } from 'react-native-web';
 
 export default function CategoryList() {
   const categoryList = [
@@ -34,10 +35,11 @@ export default function CategoryList() {
       <FlatList 
         data={categoryList} // Corrected here
         horizontal={true}
+        showsHorizontalScrollIndicator={false}
         renderItem={({item}) => ( // Added parentheses to wrap the JSX
-          <View>
+          <TouchableOpacity onPress={()=>console.log(item.name)}>
             <CategoryItem category={item} />
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>
